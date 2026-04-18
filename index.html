@@ -1,9 +1,10 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Huachuca Consulting | AI Strategy & Critical Systems</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='8' fill='%231B3A6B'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='28' fill='%23C68B2B'>HC</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -165,23 +166,7 @@
 
   .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
 
-  .hero-scroll {
-    position: absolute;
-    bottom: 32px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
-    opacity: 0.5;
-  }
-
-  .hero-scroll::before {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 48px;
-    background: white;
-    margin: 0 auto;
-  }
+  .hero-scroll { display: none; }
 
   /* SECTIONS */
   section { padding: 100px 5%; }
@@ -528,7 +513,6 @@
   .contact {
     background: var(--navy-dark);
     color: white;
-    text-align: center;
   }
 
   .contact-inner {
@@ -688,9 +672,11 @@
       <div class="about-card">
         <div class="circuit">⚡</div>
         <h3>Built on Delivery</h3>
-        <p>Every engagement is grounded in what actually works. From Fortune 500 war rooms to regional business AI readiness assessments, the approach is the same: understand the problem first, build the right thing second, and protect client data throughout.</p>
+        <p>Every engagement is grounded in what actually works. From Fortune 500 war rooms to business AI readiness assessments, the approach is the same: understand the problem first, build the right thing second, and protect client data throughout.</p>
         <br>
         <p>With a background spanning software engineering, data architecture, AI implementation, and educator roles in intelligent systems design, Huachuca Consulting offers something rare: technical credibility paired with the ability to communicate clearly across the organization.</p>
+        <br>
+        <p>That includes leading and managing technical teams across China, India, Australia, Greece, Germany, Ireland, and throughout the United States — experience that shapes how engagements are structured, communicated, and delivered.</p>
       </div>
     </div>
   </div>
@@ -738,11 +724,13 @@
     <p class="section-sub reveal">A specialty in Critical Situation Management means being the person organizations call when a technical crisis threatens operations, revenue, or customer trust at enterprise scale. This includes building critical situation prediction models to anticipate issues before they become incidents, manage the response with precision, and mitigate impact when seconds matter.</p>
     <div class="fortune-grid reveal">
       <div class="fortune-tag">Goldman Sachs</div>
+      <div class="fortune-tag">Citigroup</div>
       <div class="fortune-tag">FedEx</div>
       <div class="fortune-tag">Amazon</div>
       <div class="fortune-tag">Kaiser Permanente</div>
       <div class="fortune-tag">Fifth Third Bank</div>
       <div class="fortune-tag">Cerner</div>
+      <div class="fortune-tag">Citrix</div>
       <div class="fortune-tag">ESPN</div>
       <div class="fortune-tag">Bloomberg</div>
     </div>
@@ -828,7 +816,7 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
-    <div class="section-label reveal" style="color:var(--gold); justify-content:center; display:flex;">Contact</div>
+    <div class="section-label reveal" style="color:var(--gold);">Contact</div>
     <h2 class="section-title reveal" style="color:white;">Ready to Start a<br>Conversation?</h2>
     <div class="contact-divider"></div>
     <p class="reveal">Whether you are exploring an AI readiness assessment, navigating a technology decision, or dealing with a critical situation that needs experienced hands, reach out directly.</p>
