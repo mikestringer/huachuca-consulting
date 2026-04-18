@@ -100,6 +100,849 @@
     background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.15;
+    max-width: 780px;
+    margin-bottom: 24px;
+    animation: fadeUp 0.8s ease 0.15s both;
+  }
+
+  .hero h1 span {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .hero p {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: rgba(255,255,255,0.78);
+    max-width: 600px;
+    line-height: 1.7;
+    margin-bottom: 44px;
+    font-weight: 300;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeUp 0.8s ease 0.45s both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: white;
+    text-decoration: none;
+    padding: 15px 34px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  .btn-outline {
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    text-decoration: none;
+    padding: 15px 34px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    opacity: 0.5;
+  }
+
+  .hero-scroll::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: white;
+    margin: 0 auto;
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 5%; }
+
+  .section-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    position: relative;
+    padding-left: 28px;
+  }
+
+  .section-label::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 600;
+    color: var(--navy-dark);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .section-sub {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    max-width: 560px;
+    font-weight: 300;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--off-white);
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 44px;
+  }
+
+  .stat {
+    background: var(--white);
+    padding: 28px 24px;
+    border-top: 3px solid var(--gold);
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-card {
+    background: var(--navy-dark);
+    color: white;
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+
+  .about-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .about-card p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.78);
+    font-weight: 300;
+  }
+
+  .about-card .circuit {
+    position: absolute;
+    bottom: 20px; right: 20px;
+    opacity: 0.06;
+    font-size: 120px;
+    line-height: 1;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    max-width: 1200px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--off-white);
+    padding: 44px 36px;
+    position: relative;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .service-card:hover {
+    background: var(--white);
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.3s;
+  }
+
+  .service-card:hover::before { height: 3px; }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--navy);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 22px;
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+
+  .service-card p {
+    font-size: 0.93rem;
+    color: var(--text-light);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* CRITICAL SITUATIONS */
+  .critical {
+    background: var(--navy-dark);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .critical::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .critical-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .critical .section-title { color: white; }
+  .critical .section-sub { color: rgba(255,255,255,0.65); max-width: 700px; }
+
+  .fortune-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 48px;
+  }
+
+  .fortune-tag {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(198,139,43,0.35);
+    color: rgba(255,255,255,0.85);
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .fortune-tag:hover {
+    background: rgba(198,139,43,0.15);
+    border-color: var(--gold);
+  }
+
+  .critical-callout {
+    background: rgba(198,139,43,0.12);
+    border-left: 3px solid var(--gold);
+    padding: 28px 32px;
+    margin-top: 56px;
+    max-width: 760px;
+  }
+
+  .critical-callout p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* CLIENTS */
+  .clients-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .clients-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .client-item {
+    background: var(--off-white);
+    padding: 22px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 0.03em;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .client-item:hover {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+
+  .client-item span {
+    display: block;
+    font-size: 11px;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-top: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* APPROACH */
+  .approach { background: var(--off-white); }
+
+  .approach-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .approach-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    margin-bottom: 64px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+  }
+
+  .step {
+    background: white;
+    padding: 36px 28px;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--gold-pale);
+    line-height: 1;
+    margin-bottom: 20px;
+  }
+
+  .step h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy-dark);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .step p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--navy-dark);
+    color: white;
+    text-align: center;
+  }
+
+  .contact-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .contact .section-title { color: white; }
+
+  .contact p {
+    color: rgba(255,255,255,0.65);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    font-weight: 300;
+  }
+
+  .contact-email {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-style: italic;
+    color: var(--gold-light);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(198,139,43,0.4);
+    padding-bottom: 4px;
+    transition: color 0.2s, border-color 0.2s;
+    margin-bottom: 48px;
+    display: block;
+  }
+
+  .contact-email:hover {
+    color: white;
+    border-color: rgba(255,255,255,0.6);
+  }
+
+  .contact-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(198,139,43,0.4);
+    margin: 40px auto;
+  }
+
+  /* FOOTER */
+  footer {
+    background: #0d1e35;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px 5%;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* DIVIDER LINE */
+  .gold-line {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 28px 0;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .about-inner, .clients-inner, .approach-header {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    .services-grid, .steps, .clients-list { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="huachuca_logo_single_color.png" alt="Huachuca Consulting">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-wordmark" style="font-family:'Cormorant Garamond',serif; font-size:1rem; font-weight:500; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:32px; animation: fadeUp 0.8s ease both;">Huachuca Consulting</div>
+  <h1>Bridging the Gap Between <span>AI Strategy</span> and Real Business Outcomes</h1>
+  <p>Data, code, and consulting services from a practitioner with decades of experience inside the most demanding technology environments in the world.</p>
+  <div class="hero-actions">
+    <a href="#services" class="btn-primary">Explore Services</a>
+    <a href="#contact" class="btn-outline">Start a Conversation</a>
+  </div>
+  <div class="hero-scroll"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-label reveal">About</div>
+      <h2 class="section-title reveal">The Experience to Deliver When It Matters</h2>
+      <div class="gold-line reveal"></div>
+      <p class="section-sub reveal">Huachuca Consulting brings hands-on technical depth to every engagement. Not slide decks and frameworks. Actual implementation, data architecture, and systems that work under pressure.</p>
+      <div class="about-stats reveal">
+        <div class="stat">
+          <div class="stat-num">25+</div>
+          <div class="stat-label">Years in Technology</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">F500</div>
+          <div class="stat-label">Enterprise Clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">AI</div>
+          <div class="stat-label">Strategy & Implementation</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Critical Situation Response</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-card">
+        <div class="circuit">⚡</div>
+        <h3>Built on Real Delivery</h3>
+        <p>Every engagement is grounded in what actually works. From Fortune 500 war rooms to regional business AI readiness assessments, the approach is the same: understand the problem first, build the right thing second, and protect client data throughout.</p>
+        <br>
+        <p>With a background spanning software engineering, data architecture, AI implementation, and educator roles in intelligent systems design, Huachuca Consulting offers something rare: technical credibility paired with the ability to communicate clearly across the organization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div class="section-label reveal">What We Do</div>
+    <h2 class="section-title reveal">Services Built Around<br>Your Business Reality</h2>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3>AI Strategy and Readiness Assessment</h3>
+      <p>A structured engagement to identify where AI can genuinely move the needle in your operation. Includes data audit, process mapping, working demonstration, and a phased roadmap with real costs and timelines.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🔒</div>
+      <h3>Private AI Architecture</h3>
+      <p>Design and build AI systems that keep sensitive business data inside your network. Local model deployment, anonymization layers, retrieval-augmented generation. Built for companies where data protection is non-negotiable.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Data Architecture and Analytics</h3>
+      <p>Turn raw business data into competitive advantage. Bid analysis, trend prediction, operational dashboards, and historical pattern recognition across your most valuable datasets.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">⚙️</div>
+      <h3>Custom Software Development</h3>
+      <p>Full-stack development with a practitioner's eye for what actually needs to be built. APIs, automation tooling, internal applications, and AI-powered workflows tailored to your environment.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚨</div>
+      <h3>Critical Situation Management</h3>
+      <p>When production systems fail and the pressure is on, experience is everything. Embedded technical leadership for high-stakes outages, data incidents, and mission-critical recovery scenarios.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📋</div>
+      <h3>Technology Consulting</h3>
+      <p>Vendor evaluation, technology selection, team capability building, and strategic guidance for organizations navigating major technology decisions or AI adoption initiatives.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CRITICAL SITUATIONS -->
+<section class="critical" id="experience">
+  <div class="critical-inner">
+    <div class="section-label reveal" style="color:var(--gold);">Track Record</div>
+    <h2 class="section-title reveal">Called In When<br>It Cannot Fail</h2>
+    <p class="section-sub reveal">A specialty in Critical Situation Management means being the person organizations call when a technical crisis threatens operations, revenue, or customer trust at enterprise scale.</p>
+    <div class="fortune-grid reveal">
+      <div class="fortune-tag">ESPN</div>
+      <div class="fortune-tag">Goldman Sachs</div>
+      <div class="fortune-tag">Bloomberg</div>
+      <div class="fortune-tag">FedEx</div>
+      <div class="fortune-tag">Amazon</div>
+      <div class="fortune-tag">Kaiser Permanente</div>
+      <div class="fortune-tag">Cerner</div>
+      <div class="fortune-tag">Fifth Third Bank</div>
+      <div class="fortune-tag">Fortune 500 Enterprises</div>
+    </div>
+    <div class="critical-callout reveal">
+      <p>"When the situation is critical and every minute of downtime carries a real cost, the ability to diagnose fast, communicate clearly, and drive resolution under pressure is not a soft skill. It is the job."</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="clients-inner">
+    <div>
+      <div class="section-label reveal">Engagements</div>
+      <h2 class="section-title reveal">Organizations<br>We Have Served</h2>
+      <div class="gold-line reveal"></div>
+      <p class="section-sub reveal">From national institutions to private companies, Huachuca Consulting has delivered data, code, and consulting services across a range of sectors and needs.</p>
+    </div>
+    <div>
+      <div class="clients-list reveal">
+        <div class="client-item">
+          Cardinal Gibbons
+          <span>Data and Technology</span>
+        </div>
+        <div class="client-item">
+          Salesforce.com
+          <span>Consulting Services</span>
+        </div>
+        <div class="client-item">
+          VMware
+          <span>Technical Consulting</span>
+        </div>
+        <div class="client-item">
+          Private LLCs
+          <span>Custom Development</span>
+        </div>
+        <div class="client-item">
+          Regional Construction Firms
+          <span>AI Strategy and Implementation</span>
+        </div>
+        <div class="client-item">
+          Enterprise Organizations
+          <span>Critical Systems Support</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="approach">
+  <div class="approach-inner">
+    <div class="approach-header">
+      <div>
+        <div class="section-label reveal">How We Work</div>
+        <h2 class="section-title reveal">A Disciplined Approach<br>to Every Engagement</h2>
+      </div>
+      <div>
+        <p class="section-sub reveal">Every engagement starts with the real problem, not a pre-packaged solution. Data protection is built into the process from day one, not bolted on at the end.</p>
+      </div>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Discover</h4>
+        <p>Understand the business, the data landscape, and where the highest-value opportunities actually are before recommending anything.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Assess</h4>
+        <p>Audit existing data, map current processes, and identify where AI and automation fit realistically versus where they do not.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Demonstrate</h4>
+        <p>Build a working proof of concept using your actual data so you can see real insight, not a slide deck or a vendor pitch.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Roadmap</h4>
+        <p>Deliver a phased implementation plan with honest costs, realistic timelines, and clear ROI framing tied to your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label reveal" style="color:var(--gold); justify-content:center; display:flex;">Contact</div>
+    <h2 class="section-title reveal" style="color:white;">Ready to Start a<br>Real Conversation?</h2>
+    <div class="contact-divider"></div>
+    <p class="reveal">Whether you are exploring an AI readiness assessment, navigating a technology decision, or dealing with a critical situation that needs experienced hands, reach out directly.</p>
+    <a href="mailto:huachuca.consulting@gmail.com" class="contact-email reveal">huachuca.consulting@gmail.com</a>
+    <a href="mailto:huachuca.consulting@gmail.com" class="btn-primary reveal" style="margin:0 auto; display:inline-block;">Send a Message</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Huachuca Consulting LLC. All rights reserved.</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 5%;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo img {
+    height: 44px;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: var(--navy);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--gold) !important; color: white !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
   .hero-logo {
     width: 260px;
     margin-bottom: 40px;
